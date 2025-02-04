@@ -1,22 +1,237 @@
-/* You can add global styles to this file, and also import other style files */
+/* Define CSS Variables for Theming */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --link-hover-color: #0056b3;
+  --navbar-height: 60px;
+}
+
+/* Reset default margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply global font */
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: var(--navbar-height);
+}
+
+/* Style Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Page Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+/* Global Font Styles */
+:root {
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Georgia', serif;
+  --font-size-base: 16px;
+  --font-size-heading: 2rem;
+  --line-height: 1.5;
+}
+
+/* Global font settings */
+body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--secondary-font);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: calc(var(--font-size-heading) * 2);
+}
+
+h2 {
+  font-size: calc(var(--font-size-heading) * 1.5);
+}
+
+h3 {
+  font-size: calc(var(--font-size-heading) * 1.2);
+}
+
+/* Paragraphs */
+p {
+  font-size: var(--font-size-base);
+  margin-bottom: 20px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+/* Active Link Styling in Navbar */
+nav ul li a.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* Hover Effect for Navbar Links */
+/* Hover Effect for Navbar Links */
+nav ul li a:hover {
+  background-color: var(--link-hover-color);  /* Keep existing color for hover */
+  color: white;                               /* Ensure text is white */
+  border-radius: 4px;
+  padding: 5px 10px;                          /* Add some padding to improve clickable area */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);   /* Subtle shadow to make it pop */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Styling */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--link-hover-color);
+}
+/* Section Spacing */
+section {
+  margin-bottom: 40px;
+}
+
+/* Navbar Padding */
+nav {
+  padding: 0 30px;
+}
+/* Typography Adjustments */
+h1, h2, h3 {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Increase heading sizes for better prominence */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
     gap: 15px;
+    align-items: center;
   }
-  
-  nav ul li {
-    display: inline;
+
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+
+  h2 {
+    font-size: 1.5rem;
   }
-  
-  nav ul li a.active {
-    color: blue; /* Highlights the active link */
+
+  h3 {
+    font-size: 1.3rem;
   }
-  
+
+  section {
+    margin-bottom: 30px;
+  }
+}
