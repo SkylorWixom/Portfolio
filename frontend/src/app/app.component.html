@@ -11,3 +11,11 @@
 
 <!-- This is where pages load -->
 <router-outlet></router-outlet>
+
+<!-- Debugging Output -->
+<h2>Projects</h2>
+<ul>
+  <li *ngFor="let project of projects">
+    {{ project.title }} - {{ project.description }}
+  </li>
+</ul>

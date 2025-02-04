@@ -6,11 +6,11 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 
-export const routes: Routes = [
-  { path: '', component: HomeComponent }, // Default route (Home)
+export const appRoutes: Routes = [ // ✅ Make sure it's named 'appRoutes'
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'resume', component: ResumeComponent },
+  { path: 'resume', component: ResumeComponent }
 ];
